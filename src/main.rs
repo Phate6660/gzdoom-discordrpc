@@ -21,6 +21,7 @@ fn main() {
         // else
         //     search for gzdoom process
         // fi
+        // TODO: Somehow filter out non-gzdoom windows like browsers or terminals that happen to have doom in the title.
         let game_process = if game_input == "doom" {
             wmctrl::utils::find_window_by_title(&windows, "DOOM").unwrap()
         } else if game_input == "pb" {

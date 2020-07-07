@@ -43,6 +43,7 @@ fn main() {
         let icon = match game {
             "DOOM Registered" => "doom",
             "DOOM 2: Hell on Earth" => "doom_ii",
+            "The Ultimate DOOM" => "ultimate_doom",
             "Project Brutality" => "pb_icon",
             "Project Brutality 3.0" => "pb_icon",
             _ => "icon",

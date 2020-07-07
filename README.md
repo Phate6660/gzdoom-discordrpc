@@ -21,8 +21,9 @@ I'm making this because:
 
 ## Running
 
-1. Ensure that `wmctrl` is installed, it is needed for getting a list of windows and searching for DOOM
-2. `cargo run -- doom` (vanilla DOOM, should work for all versions) or `cargo run -- pb` (Project Brutality)
+1. Ensure that the `wmctrl` package for your distro is installed, it is needed searching for the game window
+2. Make sure gzdoom is already running, preferably in a level since some wads don't name the title menu
+3. `cargo run -- doom` (vanilla DOOM, should work for all versions) or `cargo run -- pb` (Project Brutality)
 
 ## Screenshots
 

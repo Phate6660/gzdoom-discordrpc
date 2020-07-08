@@ -4,6 +4,12 @@
 
 A discordrpc client for GZDoom written in Rust.
 
+Currently, it only works on Linux. I'm trying to figure out how to do this for Windows, I really am.
+
+But it's proving to be quite difficult. Any help that can be offered would be greatly appreciated.
+
+Because Windows APIs are confusing, especially when you haven't used Windows in years and can't even test the code.
+
 I'm making this because:
 
 1. I could not find a pre-existing DiscordRPC client for it

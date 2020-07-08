@@ -8,7 +8,7 @@ Currently, it only works on Linux. I'm trying to figure out how to do this for W
 
 But it's proving to be quite difficult. Any help that can be offered would be greatly appreciated.
 
-Because Windows APIs are confusing, especially when you haven't used Windows in years and can't even test the code.
+Because Windows APIs are confusing, and it's especially hard when you can't even test the code.
 
 I'm making this because:
 

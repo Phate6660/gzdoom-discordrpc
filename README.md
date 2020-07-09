@@ -4,11 +4,7 @@
 
 A discordrpc client for GZDoom written in Rust.
 
-Currently, it only works on Linux. I'm trying to figure out how to do this for Windows, I really am.
-
-But it's proving to be quite difficult. Any help that can be offered would be greatly appreciated.
-
-Because Windows APIs are confusing, and it's especially hard when you can't even test the code.
+WIP(?) cross-platform support. It works on Linux, still need to test on Windows. Use at own risk and all that yada yada.
 
 I'm making this because:
 
@@ -27,8 +23,7 @@ I'm making this because:
 
 ## Running
 
-1. Ensure that the `wmctrl` package for your distro is installed, it is needed searching for the game window
-2. Make sure gzdoom is already running, preferably in a level since some wads don't name the title menu
+1. Make sure gzdoom is already running, preferably in a level since some wads don't name the title menu
 3. `cargo run -- doom` (vanilla DOOM, should work for all versions) or `cargo run -- pb` (Project Brutality)
 
 ## Screenshots

@@ -8,4 +8,4 @@ edition = "2018"
 
 [dependencies]
 discord-rpc-client = "0.3.0"
-wmctrl = "0.1.7"
+window_titles = { git = "https://github.com/HiruNya/window_titles" }

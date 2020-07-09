@@ -4,7 +4,7 @@
 
 A discordrpc client for GZDoom written in Rust.
 
-WIP(?) cross-platform support. It works on Linux, still need to test on Windows. Use at own risk and all that yada yada.
+WIP(?) cross-platform support. It works on Linux and Windows, still need to test on MacOS. Use at own risk and all that yada yada.
 
 I'm making this because:
 

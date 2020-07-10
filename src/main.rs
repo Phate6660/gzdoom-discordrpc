@@ -14,7 +14,7 @@ fn info(connection: &Connection, game_input: String) -> (String, String, String)
                 .find(|title| {
                     title
                         .to_string()
-                        .contains("- DOOM".to_string().as_str())
+                        .contains("- DOOM")
                 })
                 .unwrap();
             // "level - game" => ["level", "game"]
@@ -34,7 +34,7 @@ fn info(connection: &Connection, game_input: String) -> (String, String, String)
                 .find(|title| {
                     title
                         .to_string()
-                        .contains("- Project Brutality".to_string().as_str())
+                        .contains("- Project Brutality")
                 })
                 .unwrap();
             let game_vec: Vec<&str> = window.split(" - ").collect();
@@ -52,7 +52,7 @@ fn info(connection: &Connection, game_input: String) -> (String, String, String)
                 .find(|title| {
                     title
                         .to_string()
-                        .contains("gzdoom".to_string().as_str())
+                        .contains("gzdoom")
                 })
                 .unwrap();
             let game_vec: Vec<&str> = window.split(" - ").collect();

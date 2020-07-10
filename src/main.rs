@@ -2,7 +2,7 @@ use discord_rpc_client::Client;
 use std::{env, thread, time};
 use window_titles::{Connection, ConnectionTrait};
 
-fn info(connection: &Connection, game_input: String) -> (String, String, String) {    
+fn info(connection: &Connection, game_input: String) -> (String, String, String) {
     // List of windows as vector with strings
     let windows: Vec<String> = connection.window_titles().unwrap();
     // Yes. I know. This code is bad. I don't care. It took so many hours of agony to get it to work.
@@ -11,11 +11,7 @@ fn info(connection: &Connection, game_input: String) -> (String, String, String)
         "doom" => {
             let window = windows
                 .iter()
-                .find(|title| {
-                    title
-                        .to_string()
-                        .contains("- DOOM")
-                })
+                .find(|title| title.to_string().contains("- DOOM"))
                 .unwrap();
             // "level - game" => ["level", "game"]
             let game_vec: Vec<&str> = window.split(" - ").collect();
@@ -31,11 +27,7 @@ fn info(connection: &Connection, game_input: String) -> (String, String, String)
         "pb" => {
             let window = windows
                 .iter()
-                .find(|title| {
-                    title
-                        .to_string()
-                        .contains("- Project Brutality")
-                })
+                .find(|title| title.to_string().contains("- Project Brutality"))
                 .unwrap();
             let game_vec: Vec<&str> = window.split(" - ").collect();
             let level = game_vec[0];
@@ -49,11 +41,7 @@ fn info(connection: &Connection, game_input: String) -> (String, String, String)
             // Generically search for gzdoom if wrong arg is supplied
             let window = windows
                 .iter()
-                .find(|title| {
-                    title
-                        .to_string()
-                        .contains("gzdoom")
-                })
+                .find(|title| title.to_string().contains("gzdoom"))
                 .unwrap();
             let game_vec: Vec<&str> = window.split(" - ").collect();
             let level = game_vec[0];

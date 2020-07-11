@@ -76,7 +76,7 @@ fn main() {
             "DOOM 2: Hell on Earth" => "doom_ii",
             "DOOM 2: Unity Edition" => "doom_ii",
             "The Ultimate DOOM" => "ultimate_doom",
-            "Project Brutality" => "pb_icon",
+            "Brutal Doom: Project Brutality" => "pb_icon",
             "Project Brutality 3.0" => "pb_icon",
             _ => "icon",
         };

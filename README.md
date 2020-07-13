@@ -19,12 +19,20 @@ I'm making this because:
 3. It then looks for a doom process based on supplied argument, and parses it's window title ("level - game/mod")
 4. It is separated into an &str vector
 5. The icon will be the logo for the game/mod, the status will be the level, and the hover text will be the game/mod
-6. Program loops every 15 secs or so, looping every second would be overkill
+6. Program loops every 15 secs, looping every second would be overkill
 
 ## Running
 
-1. Make sure gzdoom is already running, preferably in a level since some wads don't name the title menu
-3. `cargo run -- doom` (vanilla DOOM, should work for all versions) or `cargo run -- pb` (Project Brutality)
+First make sure that GZDoom is running, inside of a level as most WADs don't label the title menu.<br>
+Download a prebuilt binary from the releases section, then...
+
+Linux: `chmod +x gzdoom-discord`, then `./gzdoom-discordrpc` inside of a terminal<br>
+Windows: `.\gzdoom-discordrpc` inside of a terminal such as CMD or PowerShell
+
+From source:
+1. `git clone https://github.com/Phate6660/gzdoom-discordrpc`
+2. `cd gzdoom-discordrpc`
+3. `cargo run -- doom` or `cargo run -- pb`
 
 ## Screenshots
 

@@ -2,7 +2,7 @@
 
 ![license](https://img.shields.io/badge/license-public%20domain-green)
 
-A discordrpc client for GZDoom written in Rust.
+A discordrpc client for ZDoom written in Rust.
 
 WIP(?) cross-platform support. It works on Linux and Windows, still need to test on MacOS. Use at own risk and all that yada yada.
 
@@ -27,19 +27,28 @@ I'm making this because:
 2. Download a prebuilt binary from the releases section.
 3. Open a terminal (on Windows, CMD or PowerShell should work just fine) then...
 
-Linux: `chmod +x gzdoom-discordrpc`, then `./gzdoom-discordrpc doom` or `./gzdoom-discordrpc pb`<br>
-Windows: `.\gzdoom-discordrpc.exe doom` or `.\gzdoom-discordrpc.exe pb`
+ENGINE = `gzdoom` or `lzdoom`
+
+GAME = `doom` or `pb`
+
+Linux: `chmod +x gzdoom-discordrpc`, then `./gzdoom-discordrpc ENGINE GAME`
+
+Windows: `.\gzdoom-discordrpc.exe ENGINE GAME`
 
 From source:
 1. `git clone https://github.com/Phate6660/gzdoom-discordrpc`
 2. `cd gzdoom-discordrpc`
-3. `cargo run -- doom` or `cargo run -- pb`
+3. `cargo run -- ENGINE GAME`
 
 ## Screenshots
 
 DOOM:
 
 ![DOOM](images/doom.png?raw=true "DOOM")
+
+DOOM (with LZDoom):
+
+![DOOM](images/doom_lz.png?raw=true "DOOM (with LZDoom)")
 
 DOOM II:
 
@@ -48,8 +57,3 @@ DOOM II:
 Project Brutality:
 
 ![Project Brutality](images/pb.png?raw=true "Project Brutality")
-
-## TODO
-
-1. Add support for LZDoom since it names the window without the level
-2. Figure out why the program randomly closes on Windows (might be an antivirus issue?)

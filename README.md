@@ -48,3 +48,8 @@ DOOM II:
 Project Brutality:
 
 ![Project Brutality](images/pb.png?raw=true "Project Brutality")
+
+## TODO
+
+1. Add support for LZDoom since it names the window without the level
+2. Figure out why the program randomly closes on Windows (might be an antivirus issue?)

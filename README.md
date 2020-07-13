@@ -23,7 +23,7 @@ I'm making this because:
 
 ## Running
 
-1. First make sure that GZDoom is running, inside of a level as most WADs don't label the title menu.
+1. First make sure that GZDoom or LZDoom is running, if using GZDoom make sure to be inside of a level.
 2. Download a prebuilt binary from the releases section.
 3. Open a terminal (on Windows, CMD or PowerShell should work just fine) then...
 

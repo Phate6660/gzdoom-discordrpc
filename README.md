@@ -26,7 +26,7 @@ I'm making this because:
 First make sure that GZDoom is running, inside of a level as most WADs don't label the title menu.<br>
 Download a prebuilt binary from the releases section, then...
 
-Linux: `chmod +x gzdoom-discord`, then `./gzdoom-discordrpc` inside of a terminal<br>
+Linux: `chmod +x gzdoom-discordrpc`, then `./gzdoom-discordrpc` inside of a terminal<br>
 Windows: `.\gzdoom-discordrpc.exe` inside of a terminal such as CMD or PowerShell
 
 From source:

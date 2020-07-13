@@ -18,11 +18,10 @@ pub fn gzdoom_info(connection: &Connection, game_input: String) -> (String, Stri
             let level = game_vec[0];
             let game = game_vec[1];
             let status_game = ["Game: ".to_string(), game.to_string()].concat();
-            let status_level = ["Level: ".to_string(), level.to_string()].concat();
             // Print the status to stdout
-            println!("{}\n{}\n--------------------", status_game, status_level);
+            println!("Engine: GZDoom\n{}\nLevel: {}\n--------------------", status_game, level);
             // Return the variables
-            (game.to_string(), status_game, status_level)
+            (game.to_string(), level.to_string(), status_game)
         }
         "pb" => {
             let window = windows
@@ -33,9 +32,8 @@ pub fn gzdoom_info(connection: &Connection, game_input: String) -> (String, Stri
             let level = game_vec[0];
             let game = game_vec[1];
             let status_game = ["Game: ".to_string(), game.to_string()].concat();
-            let status_level = ["Level: ".to_string(), level.to_string()].concat();
-            println!("{}\n{}\n--------------------", status_game, status_level);
-            (game.to_string(), status_game, status_level)
+            println!("Engine: GZDoom\n{}\nLevel: {}\n--------------------", status_game, level);
+            (game.to_string(), level.to_string(), status_game)
         }
         _ => {
             // Generically search for gzdoom if wrong arg is supplied
@@ -47,15 +45,14 @@ pub fn gzdoom_info(connection: &Connection, game_input: String) -> (String, Stri
             let level = game_vec[0];
             let game = game_vec[1];
             let status_game = ["Game: ".to_string(), game.to_string()].concat();
-            let status_level = ["Level: ".to_string(), level.to_string()].concat();
             // Print the status to stdout
-            println!("{}\n{}\n--------------------", status_game, status_level);
-            (game.to_string(), status_game, status_level)
+            println!("Engine: GZDoom\n{}\nLevel: {}\n--------------------", status_game, level);
+            (game.to_string(), level.to_string(), status_game)
         }
     }
 }
 
-pub fn gzdoom_run(mut drpc: Client, game: String, status_game: String, status_level: String) {
+pub fn gzdoom_run(mut drpc: Client, game: String, status_game: String, level: String) {
     // Get the icon
     let icon = match game.as_str() {
         "DOOM Registered" => "doom",
@@ -67,18 +64,19 @@ pub fn gzdoom_run(mut drpc: Client, game: String, status_game: String, status_le
         _ => "gz",
     };
 
-    let engine = "GZDoom";
+    // Set the engine
+    let engine = "Engine: GZDoom";
 
     // Set the activity
     if let Err(why) = drpc.set_activity(|a| {
-        a.details(status_game)
-            .state(status_level)
-            .assets(|ass| ass.large_image(icon).large_text(engine))
+        a.details(engine)
+            .state(status_game)
+            .assets(|ass| ass.large_image(icon).large_text(level))
     }) {
         println!("Failed to set presence: {}", why);
     }
 
     // Loop every 15 seconds
     thread::sleep(time::Duration::from_secs(15));
-    println!("program has looped");
+    println!("program has looped\n----------------");
 }

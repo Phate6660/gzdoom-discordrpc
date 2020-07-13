@@ -27,8 +27,8 @@ fn main() {
     let connection = Connection::new().unwrap();
     loop {
         if engine == "gzdoom" {
-            let (game, status_game, status_level) = gzdoom_info(&connection, game_input.clone());
-            gzdoom_run(drpc.clone(), game, status_game, status_level);
+            let (game, level, status_game) = gzdoom_info(&connection, game_input.clone());
+            gzdoom_run(drpc.clone(), game, status_game, level);
         } else if engine == "lzdoom" {
             let (game, status_game) = lzdoom_info(&connection, game_input.clone());
             lzdoom_run(drpc.clone(), game, status_game);

@@ -15,7 +15,7 @@ pub fn lzdoom_info(connection: &Connection, game_input: String) -> (String, Stri
                 .unwrap();
             let status_game = ["Game: ".to_string(), game.to_string()].concat();
             // Print the status to stdout
-            println!("{}\n--------------------", status_game);
+            println!("Engine: LZDoom\n{}\n--------------------", status_game);
             (game.to_string(), status_game)
         }
         "pb" => {
@@ -25,25 +25,25 @@ pub fn lzdoom_info(connection: &Connection, game_input: String) -> (String, Stri
                 .unwrap();
             let status_game = ["Game: ".to_string(), game.to_string()].concat();
             // Print the status to stdout
-            println!("{}\n--------------------", status_game);
+            println!("Engine: LZDoom\n{}\n--------------------", status_game);
             (game.to_string(), status_game)
         }
         _ => {
-            // Generically search for gzdoom if wrong arg is supplied
+            // Generically search for LZDoom if wrong arg is supplied
             let game = windows
                 .iter()
                 .find(|title| title.to_string().contains("LZDoom"))
                 .unwrap();
             let status_game = ["Game: ".to_string(), game.to_string()].concat();
             // Print the status to stdout
-            println!("{}\n--------------------", status_game);
+            println!("Engine: LZDoom\n{}\n--------------------", status_game);
             (game.to_string(), status_game)
         }
     }
 }
 
 pub fn lzdoom_run(mut drpc: Client, game: String, status_game: String) {
-    // Get the icon
+    // Set the icon
     let icon = "lz";
 
     // Set the engine
@@ -60,5 +60,5 @@ pub fn lzdoom_run(mut drpc: Client, game: String, status_game: String) {
 
     // Loop every 15 seconds
     thread::sleep(time::Duration::from_secs(15));
-    println!("program has looped");
+    println!("program has looped\n-----------------");
 }

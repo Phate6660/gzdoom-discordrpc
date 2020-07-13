@@ -78,5 +78,5 @@ pub fn gzdoom_run(mut drpc: Client, game: String, status_game: String, level: St
 
     // Loop every 15 seconds
     thread::sleep(time::Duration::from_secs(15));
-    println!("program has looped\n----------------");
+    println!("program has looped\n------------------");
 }

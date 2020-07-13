@@ -27,7 +27,7 @@ First make sure that GZDoom is running, inside of a level as most WADs don't lab
 Download a prebuilt binary from the releases section, then...
 
 Linux: `chmod +x gzdoom-discord`, then `./gzdoom-discordrpc` inside of a terminal<br>
-Windows: `.\gzdoom-discordrpc` inside of a terminal such as CMD or PowerShell
+Windows: `.\gzdoom-discordrpc.exe` inside of a terminal such as CMD or PowerShell
 
 From source:
 1. `git clone https://github.com/Phate6660/gzdoom-discordrpc`

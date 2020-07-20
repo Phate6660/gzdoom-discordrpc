@@ -57,3 +57,9 @@ DOOM II:
 Project Brutality:
 
 ![Project Brutality](images/pb.png?raw=true "Project Brutality")
+
+## TODO
+
+1. Rename project to zdoom-discordrpc, that way it makes more sense.
+2. Update screenshots.
+3. Figure out how the heck the regex crate works, because once I do I could slim down a lot of the codebase and remove any need for args like ENGINE or GAME.

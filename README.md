@@ -36,7 +36,7 @@ Windows: `.\gzdoom-discordrpc.exe ENGINE`
 From source:
 1. `git clone https://github.com/Phate6660/gzdoom-discordrpc`
 2. `cd gzdoom-discordrpc`
-3. `cargo run -- ENGINE GAME`
+3. `cargo run -- ENGINE`
 
 ## Screenshots
 

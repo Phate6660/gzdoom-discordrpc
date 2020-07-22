@@ -29,11 +29,9 @@ I'm making this because:
 
 ENGINE = `gzdoom` or `lzdoom`
 
-GAME = `doom` or `pb`
+Linux: `chmod +x gzdoom-discordrpc`, then `./gzdoom-discordrpc ENGINE`
 
-Linux: `chmod +x gzdoom-discordrpc`, then `./gzdoom-discordrpc ENGINE GAME`
-
-Windows: `.\gzdoom-discordrpc.exe ENGINE GAME`
+Windows: `.\gzdoom-discordrpc.exe ENGINE`
 
 From source:
 1. `git clone https://github.com/Phate6660/gzdoom-discordrpc`
@@ -61,4 +59,3 @@ Project Brutality:
 ## TODO
 
 1. Rename project to zdoom-discordrpc, that way it makes more sense.
-2. Figure out how the heck the regex crate works, because once I do I could slim down a lot of the codebase and remove any need for args like ENGINE or GAME.

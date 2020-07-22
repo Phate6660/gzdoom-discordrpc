@@ -3,6 +3,7 @@ use regex::Regex;
 use std::{env, thread, time};
 use window_titles::{Connection, ConnectionTrait};
 
+// Returns the window title; for gzdoom this is "level - game", for lzdoom this is just "game"
 fn info(connection: Connection) -> Result<String, Box<dyn std::error::Error>> {
     // List of windows as vector with strings
     let windows: Vec<String> = connection.window_titles().unwrap();
@@ -12,6 +13,7 @@ fn info(connection: Connection) -> Result<String, Box<dyn std::error::Error>> {
 }
 
 fn main() {
+    // Obtain engine from first arg since it would be near impossible to find correct one from the code
     let engine = env::args()
         .nth(1)
         .expect("Requires an engine to be input (gzdoom/lzdoom)");
@@ -23,19 +25,18 @@ fn main() {
 
     // Create connection so that window list may be obtained
     let connection = Connection::new().unwrap();
+
     let window = info(connection).unwrap();
     let window_clone = &window.clone();
     let window_second_clone = &window.clone();
     loop {
         if engine == "gzdoom" {
+            // "level - game" => [level, game]
             let game_vec: Vec<&str> = window_clone.split(" - ").collect();
             let level = game_vec[0];
             let game = game_vec[1];
             let status_game = ["Game: ".to_string(), game.to_string()].concat();
-            println!(
-                "Engine: GZDoom\n{}\nLevel: {}\n--------------------",
-                status_game, level
-            );
+            println!("Engine: GZDoom\n{}\nLevel: {}\n--------------------", status_game, level);
 
             // Get the icon
             let icon = match game {
@@ -63,10 +64,8 @@ fn main() {
             let status_game = ["Game: ".to_string(), window_second_clone.to_string()].concat();
             println!("Engine: LZDoom\n{}\n--------------------", status_game);
 
-            // Set the icon
             let icon = "lz";
 
-            // Set the engine
             let engine = "Engine: LZDoom";
 
             // Set the activity

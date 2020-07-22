@@ -4,7 +4,7 @@ use std::{env, thread, time};
 use window_titles::{Connection, ConnectionTrait};
 
 // Returns the window title; for gzdoom this is "level - game", for lzdoom this is just "game"
-fn info(connection: Connection) -> Result<String, Box<dyn std::error::Error>> {
+fn info(connection: &Connection) -> Result<String, Box<dyn std::error::Error>> {
     // List of windows as vector with strings
     let windows: Vec<String> = connection.window_titles().unwrap();
     let r = Regex::new("(Project Brutality)|(DOOM)")?;
@@ -26,13 +26,11 @@ fn main() {
     // Create connection so that window list may be obtained
     let connection = Connection::new().unwrap();
 
-    let window = info(connection).unwrap();
-    let window_clone = &window.clone();
-    let window_second_clone = &window.clone();
     loop {
         if engine == "gzdoom" {
+            let window = info(&connection).unwrap();
             // "level - game" => [level, game]
-            let game_vec: Vec<&str> = window_clone.split(" - ").collect();
+            let game_vec: Vec<&str> = window.split(" - ").collect();
             let level = game_vec[0];
             let game = game_vec[1];
             let status_game = ["Game: ".to_string(), game.to_string()].concat();
@@ -61,7 +59,8 @@ fn main() {
                 println!("Failed to set presence: {}", why);
             }
         } else if engine == "lzdoom" {
-            let status_game = ["Game: ".to_string(), window_second_clone.to_string()].concat();
+            let window = info(&connection).unwrap();
+            let status_game = ["Game: ".to_string(), window.to_string()].concat();
             println!("Engine: LZDoom\n{}\n--------------------", status_game);
 
             let icon = "lz";

@@ -67,7 +67,6 @@ fn main() {
 
             let engine = "Engine: LZDoom";
 
-            // Set the activity
             if let Err(why) = drpc.set_activity(|a| {
                 a.details(engine)
                     .state(status_game)

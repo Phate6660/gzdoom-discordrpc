@@ -1,6 +1,6 @@
 [package]
 name = "gzdoom-discordrpc"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Ash <valleyknight@protonmail.com>"]
 edition = "2018"
 
@@ -8,5 +8,5 @@ edition = "2018"
 
 [dependencies]
 discord-rpc-client = "0.3.0"
-regex = "1"
+fancy-regex = "0.4.0"
 window_titles = { git = "https://github.com/HiruNya/window_titles" }

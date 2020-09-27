@@ -1,5 +1,5 @@
 use discord_rpc_client::Client;
-use regex::Regex;
+use fancy_regex::Regex;
 use std::{env, thread, time};
 use window_titles::{Connection, ConnectionTrait};
 
@@ -7,8 +7,8 @@ use window_titles::{Connection, ConnectionTrait};
 fn info(connection: &Connection) -> Result<String, Box<dyn std::error::Error>> {
     // List of windows as vector with strings
     let windows: Vec<String> = connection.window_titles().unwrap();
-    let r = Regex::new("(Project Brutality)|(DOOM)")?;
-    let window: String = windows.into_iter().filter(|s| r.is_match(s)).collect();
+    let re = Regex::new("((?!(.*Firefox.*)|(.*Pale Moon.*))(DOOM)|(Project Brutality))").unwrap();
+    let window: String = windows.into_iter().filter(|s| re.is_match(s).unwrap()).collect();
     Ok(window)
 }
 

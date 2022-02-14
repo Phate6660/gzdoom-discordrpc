@@ -7,7 +7,7 @@ use window_titles::{Connection, ConnectionTrait};
 fn info(connection: &Connection) -> Result<String, Box<dyn std::error::Error>> {
     // List of windows as vector with strings
     let windows: Vec<String> = connection.window_titles().unwrap();
-    let re = Regex::new("((?!(.*Firefox.*)|(.*Pale Moon.*))(DOOM)|(Project Brutality))").unwrap();
+    let re = Regex::new("((?!(.*Firefox.*)|(.*Pale Moon.*))(DOOM)|(Project Brutality)|(Snap the Sentinel))").unwrap();
     let window: String = windows.into_iter().filter(|s| re.is_match(s).unwrap()).collect();
     Ok(window)
 }
@@ -44,6 +44,7 @@ fn main() {
                 "The Ultimate DOOM" => "ultimate_doom",
                 "Brutal Doom: Project Brutality" => "pb_icon",
                 "Project Brutality 3.0" => "pb_icon",
+                "Snap the Sentinel" => "sts",
                 _ => "gz",
             };
 
